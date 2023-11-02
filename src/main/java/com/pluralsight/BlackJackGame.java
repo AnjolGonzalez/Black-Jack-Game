@@ -21,8 +21,6 @@ public class BlackJackGame {
                 "Please enter your name:");
         String player2Name = scan.nextLine();
 
-        //Hands playerHand = new Hands();
-       //Hands player2Hand = new Hands();
 
         for (int i = 0; i < 2; i++) {
             Cards cards = deck.dealer();
@@ -33,14 +31,14 @@ public class BlackJackGame {
             hands2.dealer(cards);
         }
 
-        int handRank = hands.rank();
+        int handRank = hands.getRank();
         System.out.println(playerName + " " + handRank);
 
-        int handRank2 = hands2.rank();
+        int handRank2 = hands2.getRank();
         System.out.println(player2Name + " " + handRank2);
 
         if (handRank > handRank2 && handRank <= 21) {
-            System.out.println("Player 1 winds!\n" +
+            System.out.println("Player 1 wins!\n" +
                     " Better luck next time!");
         } else if (handRank2 > handRank && handRank2 <= 21) {
             System.out.println("Player 2 wins!\n" +

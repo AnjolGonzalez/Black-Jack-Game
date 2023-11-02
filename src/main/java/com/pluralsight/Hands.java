@@ -19,7 +19,7 @@ public class Hands {
         return cards.size();
     }
 
-    public int rank() {
+    public int getRank() {
         int rank = 0;
         for (Cards card : cards) {
             card.flipCard();

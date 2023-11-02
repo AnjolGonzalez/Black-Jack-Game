@@ -12,7 +12,7 @@ public class Deck {
 
         for (String suit : suits) {
             for (String rank : ranks) {
-                Cards card1 = new Cards();
+                Cards card1 = new Cards(suit, rank);
                 cards.add(card1);
             }
         }

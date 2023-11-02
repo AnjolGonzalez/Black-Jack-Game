@@ -2,36 +2,30 @@ package com.pluralsight;
 
 public class Cards {
     private String suit;
-    private String rank;
+    private String value;
     private boolean isFaceUp;
-    public Cards() {
+    public Cards(String suit, String value) {
         this.suit = suit;
+        this.value = value;
         this.isFaceUp = false;
     }
     public String getSuit() {
         if (isFaceUp) {
             return suit;
         } else {
-            return "#";
+            return null;
         }
-    }
-    public int getRank() {
-        if (isFaceUp) {
-            if (rank.equalsIgnoreCase("A")) {
-                return 11;
-            } else if (rank.equalsIgnoreCase("K") || rank.equals("Q") || rank.equals("J")) {
-                return 10;
-            }
-        }
-        else {
-            return 0;
-        }
-        return Integer.parseInt(rank);
     }
     public int getPointRank() {
         if (isFaceUp) {
-            return this.getRank();
-        }else {
+            if (value.equalsIgnoreCase("A")) {
+                return 11;
+            } if (value.equalsIgnoreCase("K") || value.equals("Q") || value.equals("J")) {
+                return 10;
+            }
+            return Integer.parseInt(value);
+        }
+        else {
             return 0;
         }
     }
@@ -41,5 +35,4 @@ public class Cards {
     public void flipCard() {
         isFaceUp = !isFaceUp;
     }
-
 }
